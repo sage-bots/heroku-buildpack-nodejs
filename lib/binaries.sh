@@ -7,6 +7,20 @@ needs_resolution() {
   fi
 }
 
+install_mongo(){
+  local version="$1"
+  local dir="$2"
+
+  echo "Downloading and installing mongo $version..."
+
+  curl https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.2.6.tgz --silent --fail  --retry 5 --retry-max-time 15 -o /tmp/mongo.tar.gz
+  tar xzf /tmp/mongo.tar.gz -C /tmp
+  rm -rf $dir/*
+  mv /tmp/mongodb-linux-x86_64-3.2.6/* $dir
+  chmod +x $dir/bin/*
+
+}
+
 install_nodejs() {
   local version="$1"
   local dir="$2"
