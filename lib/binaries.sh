@@ -8,8 +8,7 @@ needs_resolution() {
 }
 
 install_mongo(){
-  local version="$1"
-  local dir="$2"
+  local dir="$1"
 
   echo "Downloading and installing mongo $version..."
 

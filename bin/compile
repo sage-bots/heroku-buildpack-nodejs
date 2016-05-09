@@ -90,7 +90,7 @@ install_bins() {
     warn_node_engine "$node_engine"
     install_nodejs "$node_engine" "$BUILD_DIR/.heroku/node"
     install_npm "$npm_engine" "$BUILD_DIR/.heroku/node"
-    install_mongo "$npm_engine" "$BUILD_DIR/.heroku/mongo"
+    install_mongo "$BUILD_DIR/.heroku/mongo"
   fi
   warn_old_npm
 }
